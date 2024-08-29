@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <title>Pizza Vincent</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <title>Chez Pizza Vincent</title>
 </head>
 <body>
     <header>
@@ -34,9 +36,17 @@
 
             <div class="carte">
                 <h2>La carte des pizzas</h2>
-                <div class="box1">
+                <div class="box1 red">
                     <h3>Pizzas à la tomate</h3>
                     <div class="box2">
+                        <div class="line type">
+                            <strong>Pizza</strong>
+                            <p class="ingredients">Ingredients</p>
+                            <div class="price">
+                                <p>Grande</p>
+                                <p>Petite</p>
+                            </div>
+                        </div>
                         <div class="line">
                             <strong>Brousse-Chorizo</strong>
                             <p class="ingredients">brousse — chorizo — emmental — herbes de provence — olives</p>
@@ -53,8 +63,332 @@
                                 <p>6,50€</p>
                             </div>
                         </div>
+                        <div class="line">
+                            <strong>Napolitaine</strong>
+                            <p class="ingredients">anchois — mozzarella — emmental — herbes de provence — olives</p>
+                            <div class="price">
+                                <p>11€</p>
+                                <p>9,50€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>Montagnette</strong>
+                            <p class="ingredients">jambon cru — fromage de chèvre — emmental — herbes de provence — olives</p>
+                            <div class="price">
+                                <p>10€</p>
+                                <p>9,50€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>Jambon</strong>
+                            <p class="ingredients">jambon cuit — emmental — herbes de provence — olives</p>
+                            <div class="price">
+                                <p>9€</p>
+                                <p>7,50€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>Royale</strong>
+                            <p class="ingredients">champignons frais — jambon cuit — emmental — herbes de provence — olives</p>
+                            <div class="price">
+                                <p>10€</p>
+                                <p>8,50€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>Poulet Kaï Kaï</strong>
+                            <p class="ingredients">blancs de poulet — ail frais — poivrons — piments — emmental — herbes — olives</p>
+                            <div class="price">
+                                <p>13€</p>
+                                <p>11,50€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>Provencale</strong>
+                            <p class="ingredients">filets d'anchois à l'huile — câpres — ail frais — herbes de provence — olives</p>
+                            <div class="price">
+                                <p>9€</p>
+                                <p>7,50€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>Périgourdine</strong>
+                            <p class="ingredients">magrets de canards fumés — champignons — mozzarella — emmental — touches de crème</p>
+                            <div class="price">
+                                <p>13€</p>
+                                <p>11,50€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>Végétarienne</strong>
+                            <p class="ingredients">champignons frais — poivrons — oignons — emmental — herbes de provence — olives</p>
+                            <div class="price">
+                                <p>9,50€</p>
+                                <p>8€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>Mozzarella</strong>
+                            <p class="ingredients">emmental — mozzarella — herbes de provence — olives</p>
+                            <div class="price">
+                                <p>9,50€</p>
+                                <p>8€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>4 fromages</strong>
+                            <p class="ingredients">fromage de chèvre — reblochon — mozzarella — emmental — herbes — olives</p>
+                            <div class="price">
+                                <p>12€</p>
+                                <p>10,50€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>Mexicaine</strong>
+                            <p class="ingredients">chorizo — poivrons rouges+verts — emmental — herbes de provence — olives</p>
+                            <div class="price">
+                                <p>10€</p>
+                                <p>8,50€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>Arménienne</strong>
+                            <p class="ingredients">viande hachée — poivrons rouges+verts — oignons — emmental — herbes — olives</p>
+                            <div class="price">
+                                <p>12€</p>
+                                <p>11€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>Aveyronnaise</strong>
+                            <p class="ingredients">viande hachée — roquefort — emmental — herbes de provence — olives</p>
+                            <div class="price">
+                                <p>12€</p>
+                                <p>11€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>Parme</strong>
+                            <p class="ingredients">jambon cru — mozzarella — emmental — herbes de provence — olives</p>
+                            <div class="price">
+                                <p>10€</p>
+                                <p>9,50€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>Très Viandé</strong>
+                            <p class="ingredients">viande hachée — chorizo — lardons — emmental — herbes de provence — olives</p>
+                            <div class="price">
+                                <p>13,50€</p>
+                                <p>12,50€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>Catalane</strong>
+                            <p class="ingredients">thon — câpres — emmental — poivrons rouges+verts — herbes — olives</p>
+                            <div class="price">
+                                <p>11,50€</p>
+                                <p>10,50€</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                
+                <div class="box1 beige">
+                    <h3>Pizzas à la crème fraîche</h3>
+                    <div class="box2">
+                        <div class="line type">
+                            <strong>Pizza</strong>
+                            <p class="ingredients">Ingredients</p>
+                            <div class="price">
+                                <p>Grande</p>
+                                <p>Petite</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>Samosa</strong>
+                            <p class="ingredients">viande de bœuf — oignons — petits pois — cumin — emmental — herbes — olives</p>
+                            <div class="price">
+                                <p>13€</p>
+                                <p>12€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>Gratinée</strong>
+                            <p class="ingredients">saumon fumé — fromage de chèvre — emmental — herbes de provence — olives</p>
+                            <div class="price">
+                                <p>12€</p>
+                                <p>10,50€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>Flam.</strong>
+                            <p class="ingredients">oignons — lardons — emmental — herbes de provence — olives</p>
+                            <div class="price">
+                                <p>10€</p>
+                                <p>8,50€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>Savoyarde</strong>
+                            <p class="ingredients">jambon cru — reblochon — emmental — herbes de provence — olives</p>
+                            <div class="price">
+                                <p>11€</p>
+                                <p>9,50€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>Bleue</strong>
+                            <p class="ingredients">roquefort — cerneaux de noix — emmental — herbes de provence — olives</p>
+                            <div class="price">
+                                <p>11€</p>
+                                <p>9,50€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>4 fro Blanche</strong>
+                            <p class="ingredients">mozza — fromage de chèvre — reblochon — emmental — herbes de provence — olives</p>
+                            <div class="price">
+                                <p>13€</p>
+                                <p>11,50€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>Chef</strong>
+                            <p class="ingredients">fromage de chèvre — poivrons — oignons — emmental — herbes de provence — olives</p>
+                            <div class="price">
+                                <p>12€</p>
+                                <p>10,50€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>Queen</strong>
+                            <p class="ingredients">champignons — jambon cuit — emmental — herbes de provence — olives</p>
+                            <div class="price">
+                                <p>10€</p>
+                                <p>8,50€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>Très poisson</strong>
+                            <p class="ingredients">saumon fumé — thon — parsemée d'aneth — emmental — olives</p>
+                            <div class="price">
+                                <p>13€</p>
+                                <p>12€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>Tartiflette</strong>
+                            <p class="ingredients">oignons — lardons — reblochon — emmental — herbes de provence — olives</p>
+                            <div class="price">
+                                <p>12€</p>
+                                <p>10,50€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>La douce</strong>
+                            <p class="ingredients">Magrets de canard fumés — brousse — emmental — herbes de provence — olives</p>
+                            <div class="price">
+                                <p>13€</p>
+                                <p>11,50€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>Maya</strong>
+                            <p class="ingredients">un filet de miel — fromage de chèvre — emmental — amandes effilées — olives</p>
+                            <div class="price">
+                                <p>11€</p>
+                                <p>9,50€</p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <strong>Indienne</strong>
+                            <p class="ingredients">lamelles de blancs de poulet — oignons — emmental — curry — herbes de provence — olives</p>
+                            <div class="price">
+                                <p>13€</p>
+                                <p>11,50€</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box1 blue">
+                    <h3>Boissons</h3>
+                    <div class="box2">
+                        <h4>Vins de la Montaurone</h4>
+                        <div class="line">
+                            <strong>Rouge, vin de pays</strong>
+                            <p>7,5€</p>
+                        </div>
+                        <div class="line">
+                            <strong>Rosé frais, vin de pays</strong>
+                            <p>7,5€</p>
+                        </div>
+                        <div class="line">
+                            <strong>Rosé frais, cuvée réservée</strong>
+                            <p>9,5€</p>
+                        </div>
+                        <div class="line">
+                            <strong>Blanc frais, cuvée réservée</strong>
+                            <p>7,5€</p>
+                        </div>
+                    </div>
+                    <div class="box2" style="margin-top: 20px;">
+                        <h4>Cave du Roy René</h4>
+                        <div class="line">
+                            <strong>Vin rouge Aixpressions</strong>
+                            <p>9,5€</p>
+                        </div>
+                    </div>
+                    <div class="box2" style="margin-top: 20px;">
+                        <h4>Autres</h4>
+                        <div class="line">
+                            <strong>Coco Bouteille</strong>
+                            <p>4€</p>
+                        </div>
+                        <div class="line">
+                            <strong>Oasis Bouteille</strong>
+                            <p>4€</p>
+                        </div>
+                        <div class="line">
+                            <strong>Soda (33cl)</strong>
+                            <p>1,5€</p>
+                        </div>
+                        <div class="line">
+                            <strong>Heineken (25cl)</strong>
+                            <p>2€</p>
+                        </div>
+                        <div class="line">
+                            <strong>Leiffe, Despé (25cl)</strong>
+                            <p>2,5€</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="contact">
+                <h2>Nous trouver</h2>
+
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2888.331855692339!2d5.295301276386439!3d43.62045147110369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9f42697a5a9e9%3A0x5c7004cec7fe1688!2sPizzaVincent!5e0!3m2!1sen!2sfr!4v1724967957324!5m2!1sen!2sfr" 
+                    width="1000" 
+                    height="450" 
+                    style="border:0; margin: 30px 0;"
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+
+                <a href="" class="tel">
+                    <ion-icon name="call-outline"></ion-icon>
+                    <p>06 08 52 71 97</p>
+                </a>
+                <a href="" class="tel">
+                    <ion-icon name="call-outline"></ion-icon>
+                    <p>04 42 50 63 66</p>
+                </a>
             </div>
         </div>
     </main>
