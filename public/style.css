@@ -19,11 +19,12 @@ header {
     text-align: center;
     align-items: center;
     background-color: #2f2d2f;
-    padding: 20px 0;
+    padding: 30px 0;
     justify-content: center;
     position: fixed;
     width: 100%;
     box-shadow: 0 0 2px 2px black;
+    z-index: 100;
 }
 
 header .navlinks {
@@ -56,7 +57,7 @@ main .container {
     margin: 0 100px;
     background-color: white;
     padding: 50px;
-    padding-top: 75px;
+    padding-top: 125px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -160,7 +161,29 @@ main .container .contact {
     justify-content: center;
     text-align: center;
     align-items: center;
+    width: 100%;
 }
+
+.iframe-container {
+    position: relative;  /* Position relative pour le conteneur parent */
+    width: 100%;  /* Prend toute la largeur du conteneur parent */
+    padding-bottom: 56.25%;  /* Ratio d'aspect 16:9 (hauteur/largeur * 100) */
+    height: 0;  /* Hauteur initiale à 0 pour le "padding-bottom hack" */
+    overflow: hidden;  /* Cache le débordement */
+    border-radius: 5px;  /* Arrondit les coins */
+    margin: 30px 0;  /* Marge extérieure */
+}
+
+.iframe-container iframe {
+    position: absolute;  /* Absolu pour remplir le conteneur parent */
+    top: 0;  /* Aligne en haut */
+    left: 0;  /* Aligne à gauche */
+    width: 100%;  /* Largeur totale du conteneur parent */
+    height: 100%;  /* Hauteur totale du conteneur parent */
+    border: 0;  /* Pas de bordure */
+}
+
+
 
 main .container .contact .tel{
     display: flex;
@@ -174,4 +197,12 @@ main .container .contact .tel{
 
 main .container .contact .tel ion-icon, main .container .contact .tel p{
     font-size: 20px;
+}
+
+
+@media (max-width: 900px) {
+    main .container {
+        margin: 0 50px;
+        padding: 25px;
+    }
 }
