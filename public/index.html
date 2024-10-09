@@ -508,17 +508,32 @@
                 // Récupérer les ingrédients
                 const pizzaIngredients = line.querySelector('.ingredients') ? line.querySelector('.ingredients').textContent : 'Ingrédients non disponibles';
                 
+                // Convertir la chaîne d'ingrédients en liste
+                const ingredientsList = pizzaIngredients.split(' — ');
+                let ingredientsHtml = '<ul>';
+                ingredientsList.forEach(ingredient => {
+                    ingredientsHtml += `<li>${ingredient}</li>`;
+                });
+                ingredientsHtml += '</ul>';
+
                 // Récupérer les prix pour Grande et Petite
                 const pizzaPrice1 = line.querySelector('.price1') ? line.querySelector('.price1').textContent : 'Prix Grande non disponible';
                 const pizzaPrice2 = line.querySelector('.price2') ? line.querySelector('.price2').textContent : 'Prix Petite non disponible';
 
                 // Afficher les informations dans le modal
                 document.getElementById('pizza-name').textContent = pizzaName;
-                document.getElementById('pizza-ingredients').textContent = `Ingrédients : ${pizzaIngredients}`;
+                document.getElementById('pizza-ingredients').innerHTML = `${ingredientsHtml}`;
                 document.getElementById('pizza-price').innerHTML = `Grande : ${pizzaPrice1} <br> Petite : ${pizzaPrice2}`;
 
                 // Afficher le modal
-                document.getElementById('pizza-details-modal').style.display = 'flex';
+                const modal = document.getElementById('pizza-details-modal');
+                modal.style.display = 'flex';
+
+                // Attendre un court instant pour permettre au modal de s'afficher avant de lancer l'animation
+                setTimeout(() => {
+                    modal.classList.remove('hide');
+                    modal.classList.add('show');
+                }, 10);  // Délai court pour que le navigateur puisse rendre le modal avant d'ajouter la classe show
 
                 // Ajouter la classe 'modal-open' pour empêcher le scroll
                 document.body.classList.add('modal-open');
@@ -527,22 +542,34 @@
 
         // Fermer le modal quand on clique sur le bouton de fermeture
         document.querySelector('.close').addEventListener('click', function() {
-            document.getElementById('pizza-details-modal').style.display = 'none';
+            const modal = document.getElementById('pizza-details-modal');
 
-            // Retirer la classe 'modal-open' pour réactiver le scroll
-            document.body.classList.remove('modal-open');
+            // Ajouter la classe hide pour démarrer l'animation de fermeture
+            modal.classList.remove('show');
+            modal.classList.add('hide');
+
+            // Attendre la fin de l'animation avant de retirer le modal du DOM
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.body.classList.remove('modal-open');
+            }, 500); // Le temps doit correspondre à la durée de l'animation CSS (0.5s)
         });
 
         // Fermer le modal quand on clique en dehors du contenu
         window.addEventListener('click', function(event) {
             const modal = document.getElementById('pizza-details-modal');
             if (event.target === modal) {
-                modal.style.display = 'none';
+                modal.classList.remove('show');
+                modal.classList.add('hide');
 
-                // Retirer la classe 'modal-open' pour réactiver le scroll
-                document.body.classList.remove('modal-open');
+                // Attendre la fin de l'animation avant de retirer le modal du DOM
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                    document.body.classList.remove('modal-open');
+                }, 500); // Durée de l'animation (0.5s)
             }
         });
+
     </script>
 </body>
 </html>

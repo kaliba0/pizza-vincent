@@ -342,51 +342,50 @@ main .container .contact .tel ion-icon, main .container .contact .tel p{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0); /* Commence transparent */
     z-index: 9;
     justify-content: flex-end;
-    align-items: center;
+    align-items: flex-end;
+    overflow: hidden; /* Cache tout débordement */
+    opacity: 0; /* Commence invisible */
+    transition: background-color 0.3s ease, opacity 0.3s ease; /* Transition pour opacité et fond */
 }
 
+/* État visible (modal ouvert) avec l'effet sombre */
+.pizza-details-modal.show {
+    background-color: rgba(0, 0, 0, 0.8); /* Assombrit progressivement */
+    opacity: 1; /* Rendre l'élément visible */
+}
+
+/* État masqué (modal fermé) */
+.pizza-details-modal.hide {
+    background-color: rgba(0, 0, 0, 0); /* Rend le fond transparent */
+    opacity: 0; /* Masque progressivement */
+}
+
+
+/* État du contenu en mode fermeture : hors de l'écran (en bas) */
 .modal-content {
     background-color: #fff;
     padding: 20px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    justify-content: center;
-    gap: 20px;
-    bottom: 0;
-}
-
-/* Modal full screen */
-.pizza-details-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 9;
-    justify-content: flex-end; /* Assure que le modal soit en bas */
-    align-items: flex-end; /* Centre horizontalement mais colle le modal en bas */
+    transform: translateY(100%); /* Par défaut, le contenu est en dehors de l'écran */
+    transition: transform 0.3s ease; /* Animation pour le mouvement */
 }
 
-.modal-content {
-    background-color: #fff;
-    padding: 20px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 100%; /* Prend toute la largeur en bas */
-    max-width: none; /* Enlève la limite de largeur pour couvrir tout l'écran en bas */
-    bottom: 0; /* Assure que le contenu soit collé au bas */
-    position: relative;
+/* État du contenu quand le modal est ouvert : visible */
+.pizza-details-modal.show .modal-content {
+    transform: translateY(0); /* Faire monter le contenu dans le viewport */
 }
+
+/* Fermeture : faire descendre le contenu hors de l'écran */
+.pizza-details-modal.hide .modal-content {
+    transform: translateY(100%);
+}
+
 
 
 .ingre, #pizza-ingredients, .prices, #pizza-price {
@@ -404,20 +403,21 @@ main .container .contact .tel ion-icon, main .container .contact .tel p{
     color: #333;
 }
 
-.close {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    border-radius: 50%;
-    width: 12px;
-    height: 12px;
-    padding: 8px;
-    border: solid 2px black;
-}
 
 .close span {
-    font-size: 30px;
+    font-size: 40px;
     cursor: pointer;
     color: black;
 }
+
+
+#pizza-ingredients ul {
+    list-style-type: disc; /* Liste avec puces */
+    padding-left: 20px; /* Ajout d'un peu de marge pour les puces */
+}
+
+#pizza-ingredients li {
+    margin: 3px 0; /* Espacement entre les éléments de la liste */
+    text-align: left;
+}
+
