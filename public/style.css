@@ -45,6 +45,7 @@ header .logo {
     font-weight: 600;
 }
 
+
 main {
     background-image: url(assets/background.png);
     background-position: center;
@@ -54,7 +55,7 @@ main {
 }
 
 main .container {
-    margin: 0 100px;
+    margin: 0 7%;
     background-color: white;
     padding: 50px;
     padding-top: 125px;
@@ -199,10 +200,101 @@ main .container .contact .tel ion-icon, main .container .contact .tel p{
     font-size: 20px;
 }
 
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: white;
+    padding: 15px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    font-size: 20px;
+    display: none;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0px 0px 5px 2px black;
 
-@media (max-width: 900px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topicon {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#back-to-top ion-icon {
+    color: #2f2d2f;
+    font-size: 30px;
+}
+
+#back-to-top:hover {
+    background-color: #a5a5a5;
+    transition: all .2s;
+}
+
+
+
+@media (max-width: 1300px) {
+    main {
+        background: none;
+    }
     main .container {
-        margin: 0 50px;
+        margin: 0;
         padding: 25px;
+        padding-top: 100px;
+    }
+}
+
+@media (max-width: 1100px) {
+    main .container .carte .box1 .line {
+        justify-content: space-around;
+    }
+
+    main .container .carte .box1 .line .ingredients {
+        display: none;
+    }
+}
+
+@media (max-width: 550px) {
+    main p {
+        font-size: 14px;
+    }
+
+    .banderole {
+        font-size: 16px
+    }
+
+    main .container .carte .box1 .line {
+        justify-content: space-between;
+    }
+
+    main .container .carte .box1 {
+        padding: 20px 20px;
+    }
+
+    header {
+        padding: 20px 0;
+    }
+
+    header .navlinks {
+        gap: 15px;
+    }
+
+    header .navlinks .logo {
+        font-size: 20px;
+    }
+
+    header .navlinks a {
+        font-size: 12px;
+    }
+
+    main .container {
+        padding-top: 75px;
     }
 }
